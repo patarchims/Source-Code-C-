@@ -1,0 +1,47 @@
+// ------------------------------------------
+// Bagian untuk menguji tabel hash
+//     dengan senarai berantai
+// ------------------------------------------
+
+#include <iostream>
+#include "../HashChain.h"
+
+using namespace std;
+
+int main()
+{
+    // Buat tabel hash untuk 10 data
+    HashChain tabelHash(10);
+
+    // Memasukkan data ke dalam tabel hash
+    tabelHash.insert(21, "Andika");
+
+    tabelHash.insert(23, "Ratna");
+    tabelHash.insert(26, "Dewi");
+    tabelHash.insert(27, "Ari Wardi");
+    tabelHash.insert(29, "Karmila");
+
+    cout << "Keadaan awal: " << endl;
+    tabelHash.display();
+
+    // Tes tabrakan hash
+    tabelHash.insert(31, "Diana Riana");
+    tabelHash.insert(41, "Shanti");
+    tabelHash.insert(99, "Ahmad Dani");
+
+    cout << "Setelah ditambah: " << endl;
+    tabelHash.display();
+
+    // Cari Data
+    cout << "Nip 31: " << tabelHash.find(31) << endl;
+
+    cout << "Nip 71: " << tabelHash.find(71) << endl;
+
+    // Hapus data
+    tabelHash.remove(31);
+
+    cout << "Keadaan setelah NIP 31 dihapus: " << endl;
+    tabelHash.display();
+
+    return 0;
+}
